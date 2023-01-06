@@ -1,17 +1,15 @@
-import _ from 'lodash';
+import dom from './dom';
+import handlers from './handlers';
 
-function component() {
-  const element = document.createElement('div');
+// WHEN PAGE IS LOADED - SHOW TITLE FROM MENU LINK 'ALL'
+dom.showMainTitle(0);
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+// WHEN PAGE IS LOADED - SHOW ALL DEFAULT PROJECTS
+dom.showProjects();
 
-  return element;
-}
+// WHEN PAGE IS LOADED - SHOW ALL TASKS FROM ALL DEFAULT PROJECTS
+dom.getTasks('all');
 
-document.body.appendChild(component());
-
-console.log('tarantadong error');
-
-console.log('1st intentional error');
-
-cosnole.log('2nd intentional error');
+dom.responsiveMenu();
+handlers.resizeWindow();
+handlers.listenClicks();
