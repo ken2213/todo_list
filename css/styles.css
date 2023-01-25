@@ -11,13 +11,18 @@
   --yellow: #E6DB7B;
   --red: #E67B7B;
   --dark-red: #C46161;
+  --bg-yellow: #F2EA79;
+  --bg-red: #F2637E;
+  --bg-blue: #73D9CF;
+  --bg-orange: #F2BC79;
 }
 
 /* GENERAL STYLES */
 #body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  color: var(--dark-grey);
+  color: black;
+  background-color: var(--bg-yellow);
 }
 h2 {
   font-weight: 500;
@@ -71,10 +76,14 @@ select:focus {
 
 /* HEADER */
 #header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
   display: flex;
   align-items: center;
   height: 60px;
-  background: linear-gradient(90deg, var(--aqua) 0%, var(--light-aqua) 100%);
+  background: linear-gradient(45deg, #c22ed0 0%, #5ffae0 100%);
   font-family: 'Lato', sans-serif;
 }
 .logo {
@@ -133,11 +142,12 @@ select:focus {
 /* NAVIGATION BAR */
 #sidebar-menu {
   position: fixed;
+  z-index: 1;
   overflow: auto;
   height: 100%;
   width: 300px;
   padding: 40px 20px;
-  background-color: var(--light-grey);
+  background-color: var(--bg-red);
   transition: transform 250ms;
 }
 #sidebar-menu p {
@@ -151,10 +161,11 @@ select:focus {
   padding: 12px 20px;
   background-color: var(--white);
   font-size: 17px;
-  color: var(--dark-grey);
+  color: black;
+  background-color: var(--bg-yellow);
+  border: 4px solid black;
+  box-shadow: 4px 4px black;
   text-decoration: none;
-  border: 1px solid var(--light-grey);
-  border-radius: 5px;
   transition: .3s;
 }
 .link p,
@@ -162,15 +173,16 @@ select:focus {
   padding-left: 3px;
 }
 .selected-link {
-  background-color: var(--aqua);
+  background-color: var(--bg-blue);
   color: var(--white);
 }
 .selected-link:hover {
-  background-color: var(--dark-aqua);
+  background-color: var(--bg-blue);
 }
 .link:not(.selected-link):hover,
 .project-link:not(.selected-link):hover {
-  border: 1px solid var(--aqua);
+  border: 3.5px solid black;
+  box-shadow: 0px 0px black;
   transition: .3s;
 }
 
@@ -203,6 +215,11 @@ select:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 70px 40px 40px 40px;
+  background-color: #73D9CF;
+  border: 4px solid black;
+  column-gap: 10px;
+  box-shadow: 10px 10px black;
 }
 .main-title-icon {
   font-size: 35px;
@@ -213,9 +230,13 @@ select:focus {
 
 /* TASKS */
 .tasks-div {
+  min-height: 370px;
   max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px;
+  margin: 40px;
+  padding: 20px;
+  background-color: #F2E9D8;
+  border: 4px solid black;
+  box-shadow: 10px 10px black;
 }
 .tasks-title-div {
   display: flex;
@@ -370,7 +391,7 @@ select:focus {
 .modal-header {
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(90deg, var(--aqua) 0%, var(--light-aqua) 100%);
+  background: linear-gradient(90deg, #c22ed0 0%, #5ffae0 100%);
   color: var(--white);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -389,6 +410,19 @@ select:focus {
   font-weight: 700;
   cursor: pointer;
 }
+
+.fa-trash-alt:hover {
+  color: red;
+}
+
+.fa-info-circle:hover {
+  color: royalblue
+}
+
+.fa-plus-circle:hover {
+  color: green;
+}
+
 .modal-content {
   display: flex;
   flex-direction: column;
