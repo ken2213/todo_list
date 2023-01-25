@@ -3718,6 +3718,7 @@ const dom = (() => {
 
     mainTitleIcon.classList.add(
       'fal',
+      'fa-solid',
       'fa-fw',
       'main-title-icon',
       'padding-right',
@@ -3753,6 +3754,7 @@ const dom = (() => {
 
       mainTitleIcon.classList.add(
         'fal',
+        'fa-solid',
         'fa-fw',
         'main-title-icon',
         'padding-right',
@@ -4306,6 +4308,7 @@ const dom = (() => {
       // PROJECT ICON
       projectIcon.classList.add(
         'fal',
+        'fa-solid',
         'fa-fw',
         'project-icon',
         'project',
@@ -4323,6 +4326,7 @@ const dom = (() => {
       // PROJECT DEFAULT ICONS
       projectEditIcon.classList.add(
         'fal',
+        'fa-solid',
         'fa-edit',
         'project',
         'project-icon',
@@ -4335,6 +4339,7 @@ const dom = (() => {
 
       projectTrashIcon.classList.add(
         'fal',
+        'fa-solid',
         'fa-trash-alt',
         'project',
         'project-icon',
