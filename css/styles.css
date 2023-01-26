@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 /* COLORS PALETTE */
 :root {
   --aqua: #00B3BB;
@@ -15,11 +17,17 @@
   --bg-red: #F2637E;
   --bg-blue: #73D9CF;
   --bg-orange: #F2BC79;
+  --bg-light-orange: #F2E9D8;
+  --bg-camouflage: #C6D982;
+  --bg-light-blue: #C0D4DB;
+  --bg-dark-green: #037353;
+  --bg-light-green: #43D9A2;
+  --bg-dark-blue: #295073;
 }
 
 /* GENERAL STYLES */
 #body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'VT323', monospace;
   font-weight: 400;
   color: black;
   background-color: var(--bg-yellow);
@@ -61,8 +69,14 @@ select:focus {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+.fa-circle {
+  align-self: center;
+}
+
 .low-priority {
   color: var(--green);
+
 }
 .mid-priority {
   color: var(--yellow);
@@ -70,6 +84,10 @@ select:focus {
 .high-priority {
   color: var(--red);
 }
+.task-text {
+  font-size: 24px;
+}
+
 .task-done-text {
   text-decoration-line: line-through;
 }
@@ -83,8 +101,8 @@ select:focus {
   display: flex;
   align-items: center;
   height: 60px;
-  background: linear-gradient(45deg, #c22ed0 0%, #5ffae0 100%);
-  font-family: 'Lato', sans-serif;
+  background: var(--bg-red);
+
 }
 .logo {
   padding: 20px 40px;
@@ -95,27 +113,28 @@ select:focus {
 /* TOGGLE MENU */
 .toggle-menu {
   display: none;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   margin-left: 22px;
   padding: 9px 5px 4px 5px;
-  color: var(--white);
-  background-color: var(--dark-aqua);
-  border-radius: 3px;
+  color: black;
+  background-color: var(--bg-camouflage);
+  border: 3px solid black;
+  box-shadow: 3px 3px black;
   cursor: pointer;
 }
 .burger-line {
-  height: 2px;
+  height: 4px;
   margin-bottom: 3px;
-  background: var(--white);
+  background: black;
   transition: all .4s ease;
 }
 .toggle-menu.active .burger-line:last-child {
   opacity: 0;
 }
 .toggle-menu.active .burger-line:first-child {
-  -webkit-transform: rotate(45deg) translate(4px, 4px);
-  transform: rotate(45deg) translate(4px, 4px);
+  -webkit-transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
 .toggle-menu.active .burger-line:nth-child(2) {
   -webkit-transform: rotate(-45deg);
@@ -147,7 +166,7 @@ select:focus {
   height: 100%;
   width: 300px;
   padding: 40px 20px;
-  background-color: var(--bg-red);
+  background-color: var(--bg-camouflage);
   transition: transform 250ms;
 }
 #sidebar-menu p {
@@ -160,7 +179,7 @@ select:focus {
   margin-bottom: 15px;
   padding: 12px 20px;
   background-color: var(--white);
-  font-size: 17px;
+  font-size: 21px;
   color: black;
   background-color: var(--bg-yellow);
   border: 4px solid black;
@@ -193,9 +212,11 @@ select:focus {
   margin: 80px 0 20px 0;
   padding: 0 20px 10px 20px;
   width: 260px;
-  font-size: 18px;
+  font-size: 30px;
   border-bottom: 1px solid var(--dark-grey);
 }
+
+
 .project-text,
 .task-text {
   white-space: nowrap;
@@ -225,6 +246,7 @@ select:focus {
   font-size: 35px;
 }
 .main-title-text {
+  font-size: 40px;
   font-weight: 400;
 }
 
@@ -234,7 +256,7 @@ select:focus {
   max-width: 1000px;
   margin: 40px;
   padding: 20px;
-  background-color: #F2E9D8;
+  background-color: var(--bg-light-orange);
   border: 4px solid black;
   box-shadow: 10px 10px black;
 }
@@ -269,7 +291,7 @@ select:focus {
 .task-project-div {
   display: flex;
   padding: 20px 0;
-  border-bottom: 1px solid var(--grey);
+  border-bottom: 1px solid black;
 }
 .task-title-div {
   padding-top: 0;
@@ -301,7 +323,7 @@ select:focus {
 }
 .due-date {
   align-self: center;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--dark-aqua);
 }
 .default-tasks-icons i {
@@ -375,7 +397,7 @@ select:focus {
   top: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(2, 2, 2, 0.8);
   transition: .2s;
   margin: 0 auto;
   z-index: 2;
@@ -384,17 +406,15 @@ select:focus {
   position: relative;
   margin: 2% auto;
   max-width: 400px;
-  border-radius: 5px;
-  box-shadow: rgba(46, 46, 46, 0.2) 0px 2px 8px 0px;
+  border: 5px solid black;
+  box-shadow: 5px 5px black;
   animation: fadeIn .2s;
 }
 .modal-header {
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(90deg, #c22ed0 0%, #5ffae0 100%);
+  background: var(--bg-dark-green);
   color: var(--white);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
 }
 .modal-header h2 {
   margin: 0;
@@ -427,7 +447,7 @@ select:focus {
   display: flex;
   flex-direction: column;
   padding: 25px 20px;
-  background-color: var(--white);
+  background-color: var(--bg-blue);
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -437,13 +457,13 @@ select:focus {
   align-items: center;
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid var(--grey);
+  border-top: 3px solid black;
 }
 .cancel-modal {
   background-color: var(--white);
-  color: var(--dark-grey);
-  border: 1px solid var(--grey);
-  border-radius: 3px;
+  color: black;
+  border: 3px solid black;
+  box-shadow: 3px 3px black;
   transition: .3s;
 }
 .cancel-modal:hover {
@@ -452,10 +472,10 @@ select:focus {
 }
 .confirm-modal {
   margin-left: 10px;
-  background-color: var(--light-aqua);
-  color: var(--white);
-  border: 1px solid transparent;
-  border-radius: 3px;
+  background-color: var(--bg-light-green);
+  color: black;
+  border: 3px solid black;
+  box-shadow: 3px 3px black;
   transition: .3s;
 }
 .confirm-modal:hover {
@@ -471,8 +491,8 @@ select:focus {
   padding: 10px;
   background-color: var(--white);
   color: var(--dark-grey);
-  border: 1px solid var(--grey);
-  border-radius: 3px;
+  border: 3px solid black;
+
   transition: .3s;
 }
 #form input:focus,
@@ -533,8 +553,10 @@ select:focus {
   display: inline-block;
   width: 41px;
   padding: 5px 0;
-  border: 1px solid var(--grey);
-  border-radius: 5px;
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+  background: #295073;
+  color: #A3C9D9;
   font-size: 25px;
   cursor: pointer;
   transition: .1s;
